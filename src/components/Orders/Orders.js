@@ -9,7 +9,11 @@ import './Orders.css';
 
 const Orders = () => {
     const [products, setProducts] = useProduct();
-    const [cart, setCart] = useCart(products);
+    const [cart, setCart] = useCart();
+
+
+
+
     const handleRemoveProduct = (product) => {
         const rest = cart.filter(pd => pd._id !== product._id);
         setCart(rest);
@@ -28,7 +32,9 @@ const Orders = () => {
                 }
             </div>
             <div className='cart-container'>
-                <Cart cart={cart}>
+                <Cart cart={cart}
+
+                >
                     <Link to='/shiping'>
                         <button>
                             Proceed Shiping
@@ -36,7 +42,7 @@ const Orders = () => {
                     </Link>
                 </Cart>
             </div>
-        </div>
+        </div >
     );
 };
 
